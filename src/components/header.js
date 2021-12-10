@@ -20,7 +20,7 @@ const nav = [
 ]
 
 export const Header = () => {
-  const { onExit, isAuth } = useContext(AppContext)
+  const { onExit, isAuth, basket } = useContext(AppContext)
 
   return (
     <Container>
@@ -34,6 +34,7 @@ export const Header = () => {
         </List>
       </Box>
       {isAuth && <Box><Button onClick={onExit}>Exit</Button></Box>}
+      <Box><Link to="/basket">Basket {basket?.length ? basket?.length : ''}</Link></Box>
     </Container>
   )
 }
